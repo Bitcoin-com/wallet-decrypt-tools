@@ -1,0 +1,66 @@
+@import url("https://menu.cdn.bitcoindotcom.net/uni/dist/fonts.css?family=Gilroy&display=swap");
+
+html,
+body {
+  font-family: "Gilroy", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#form {
+  border: 1px solid black;
+  width: 300px;
+  margin: auto;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 200px;
+  margin: auto;
+  margin-top: 8px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.error {
+  margin-top: 16px;
+  color: red;
+}
+
+#wallets {
+  display: none;
+  border: 1px solid black;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 16px;
+  padding: 16px;
+  padding-top: 0;
+  border-radius: 8px;
+}
+
+.wallet-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 3fr;
+  padding: 8px 0;
+  border-bottom: 1px solid black;
+}
+
+.wallet-row:last-child {
+  border-bottom: none;
+}

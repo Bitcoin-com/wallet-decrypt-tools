@@ -1,0 +1,30 @@
+{
+  "name": "wallet-decrypt-tools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "target": "node",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve",
+    "decrypt": "node index.js"
+  },
+  "dependencies": {
+    "bops": "^1.0.1",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "crypto": "^1.0.1",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
