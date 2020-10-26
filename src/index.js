@@ -8,11 +8,10 @@ const fileDiv = document.getElementById("file");
 const fileError = document.getElementById("file-error");
 const walletsDiv = document.getElementById("wallets");
 const decodeError = document.getElementById("error");
-const submitButton = document.getElementById("submit");
 const formElement = document.getElementById("form");
 let fileContent = "";
 
-async function decipherWallet(ev) {
+async function decipherWallet() {
   try {
     const hexContent = bops.from(fileContent, "hex");
     const password = passDiv.value;
@@ -70,23 +69,20 @@ function handleSubmit(ev) {
     if (res.wallets.length > 0) {
       walletsDiv.style.display = "block";
       walletsDiv.innerHTML = `<h2>Wallets</h2>`;
-      walletsDiv.innerHTML += `
-          <div class="wallet-row">\n
-            <div>Coin</div>\n
-            <div>Wallet ID</div>\n
-            <div>Derivation Path</div>\n
-            <div>Mnemonic</div>\n
-          </div>`;
+      walletsDiv.innerHTML += `<div class="wallet-row">
+<div>Coin</div>
+<div>Wallet ID</div>
+<div>Derivation Path</div>
+<div>Mnemonic</div>
+</div>`;
 
       res.wallets.forEach((element) => {
-        walletsDiv.innerHTML += `
-        <div class="wallet-row">\n
-        <div>${element.coin}</div>\n
-        <div>${element.walletId}</div>\n
-        <div>${element.derivationPath}</div>\n
-        <div>${element.mnemonic}</div>\n
-        </div>
-        `;
+        walletsDiv.innerHTML += `<div class="wallet-row">
+<div>${element.coin}</div>
+<div>${element.walletId}</div>
+<div>${element.derivationPath}</div>
+<div>${element.mnemonic}</div>
+</div>`;
       });
     }
   });
@@ -97,4 +93,3 @@ fileDiv.addEventListener("change", loadFile);
 passDiv.addEventListener("change", () => {
   passError.innerHTML = "";
 });
-// submitButton.addEventListener("click", handleSubmit, false);

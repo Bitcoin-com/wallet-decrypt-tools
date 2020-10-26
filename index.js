@@ -5,7 +5,6 @@ const file = fs.readFileSync(__dirname + "/wallet.data", "utf-8");
 const PASSWORD = fs.readFileSync(__dirname + "/password.txt", "utf-8");
 
 const CIPHER_TYPE = "aes-256-gcm";
-// const PASSWORD = "Password123";
 
 function decipherWallet(content, password) {
   // convert file contents to buffer
